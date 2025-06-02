@@ -6,8 +6,6 @@ from agents.run import RunConfig
 
 gemini_api_key = os.getenv("GEMINI_API_KEY")
 
-
-# Check if the API key is present; if not, raise an error
 if not gemini_api_key:
     raise ValueError("GEMINI_API_KEY is not set. Please ensure it is defined")
 
@@ -28,10 +26,6 @@ config = RunConfig(
 )
 
 agent: Agent = Agent(name="Assistant", instructions="You are a helpful assistant")
-
-# result = Runner.run_sync(agent, "Tell me a joke", run_config=config)
-
-# print(result.final_output)
 
 
 @cl.on_chat_start
